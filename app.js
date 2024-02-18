@@ -21,8 +21,28 @@ app.get("/",function(req,res){
 })
 
 
+app.get("/about",function(req,res){
+  res.render("about",{about:aboutContent});;
+})
+
+app.get("/contact",function(req,res){
+  res.render("contact",{contact:contactContent});
+})
 
 
+app.get("/compose",function(req,res){
+  res.render("compose");
+})
+
+app.post("/compose",function(req,res){
+  
+  
+  const post={
+    title : req.body.postTitle,
+    content: req.body.postBody,
+  };
+  console.log(post);
+})
 
 
 
